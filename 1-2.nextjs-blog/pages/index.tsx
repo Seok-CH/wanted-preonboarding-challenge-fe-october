@@ -4,7 +4,7 @@ import { GetStaticProps } from "next";
 import Layout, { siteTitle } from "../components/layout";
 import Date from "../components/date";
 import utilStyles from "../styles/utils.module.css";
-import homeStyles from "../styles/home.module.css";
+import mainStyles from "../styles/main.module.css";
 import { getSortedPostsData } from "../lib/posts";
 
 export default function Home({
@@ -22,9 +22,9 @@ export default function Home({
         <title>{siteTitle}</title>
       </Head>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <ul className={homeStyles.list}>
+        <ul className={mainStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
-            <li className={homeStyles.listItem} key={id}>
+            <li className={mainStyles.listItem} key={id}>
               <Link href={`/${id}`}>
                 <a
                   className={`${utilStyles.headingSm} ${utilStyles.primaryColor} `}
