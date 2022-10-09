@@ -1,0 +1,30 @@
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.navItem {
+  flex: 1;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.navItemLeft {
+  composes: navItem;
+  text-align: start;
+}
+
+.navItemRight {
+  composes: navItem;
+  text-align: end;
+}
+
+.navItemNoContent {
+  flex: 1;
+}
+
+.navItem:hover {
+  border: 1px solid #18816a;
+}
