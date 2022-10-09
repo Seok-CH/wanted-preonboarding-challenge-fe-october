@@ -46,7 +46,7 @@ export default function Post({
                 {"이전 포스트"}
               </small>
               <br />
-              {postData.previous}
+              {postData.previous.split("_")[1]}
             </div>
           </Link>
         ) : (
@@ -63,7 +63,7 @@ export default function Post({
                 {"다음 포스트"}
               </small>
               <br />
-              {postData.next}
+              {postData.next.split("_")[1]}
             </div>
           </Link>
         ) : (
