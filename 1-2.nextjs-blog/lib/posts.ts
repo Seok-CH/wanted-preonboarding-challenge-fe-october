@@ -48,7 +48,7 @@ export async function getPostData(id: string) {
   const fullPostArray = fs
     .readdirSync(postsDirectory)
     .map((fileName) => fileName.replace(/\.md$/, ""));
-  const currentIndexById = fullPostArray.findIndex((post) => post === id);
+  const currentPostIndex = fullPostArray.findIndex((post) => post === id);
 
   const matterResult = matter(fileContents);
 
@@ -60,8 +60,8 @@ export async function getPostData(id: string) {
   return {
     id,
     contentHtml,
-    previous: fullPostArray[currentIndexById - 1] || null,
-    next: fullPostArray[currentIndexById + 1] || null,
+    previous: fullPostArray[currentPostIndex - 1] || null,
+    next: fullPostArray[currentPostIndex + 1] || null,
     ...(matterResult.data as { date: string; title: string }),
   };
 }
